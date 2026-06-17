@@ -27,3 +27,6 @@ httpx>=0.27.0
 # 向量相似度计算 (导入模式/聚类)
 numpy>=1.24.0
 scikit-learn>=1.2.0
+
+# PostgreSQL 数据库驱动（云持久化存储）
+psycopg2-binary>=2.9.0
