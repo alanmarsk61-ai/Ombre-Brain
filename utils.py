@@ -94,9 +94,13 @@ def load_config(config_path: str = None) -> dict:
     if env_transport:
         config["transport"] = env_transport
 
-    env_buckets_dir = os.environ.get("OMBRE_BUCKETS_DIR", "")
+        env_buckets_dir = os.environ.get("OMBRE_BUCKETS_DIR", "")
     if env_buckets_dir:
         config["buckets_dir"] = env_buckets_dir
+
+    env_db_url = os.environ.get("DATABASE_URL", "")
+    if env_db_url:
+        config["database_url"] = env_db_url
 
     # OMBRE_DEHYDRATION_MODEL (with OMBRE_MODEL alias) overrides dehydration.model
     env_dehy_model = os.environ.get("OMBRE_DEHYDRATION_MODEL", "") or os.environ.get("OMBRE_MODEL", "")
